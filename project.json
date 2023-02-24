@@ -6,6 +6,7 @@
     "UiPath.DocumentUnderstanding.ML.Activities": "[1.17.0]",
     "UiPath.Excel.Activities": "[2.16.0]",
     "UiPath.IntelligentOCR.Activities": "[6.5.0]",
+    "UiPath.Mail.Activities": "[1.18.2]",
     "UiPath.PDF.Activities": "[3.11.0]",
     "UiPath.System.Activities": "[22.10.3]",
     "UiPath.Testing.Activities": "[22.10.0]",
