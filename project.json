@@ -1,5 +1,5 @@
 {
-  "name": "DocumentUnderstandingProcess2",
+  "name": "NaviaClaimsDocumentUndertanding",
   "description": "New Document Understanding Process",
   "main": "Main-ActionCenter.xaml",
   "dependencies": {
