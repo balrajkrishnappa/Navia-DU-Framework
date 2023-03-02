@@ -355,7 +355,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">378.5,330 348.5000000000001,330 348.5000000000001,401.5 378.5000000000001,401.5 378.5000000000001,440.1 350,440.1</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence sap2010:Annotation.AnnotationText="Extraction Validation &amp; Extractor training" DisplayName="Validate &amp; Train Extractors" sap:VirtualizedContainerService.HintSize="540,2996" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                      <Sequence sap2010:Annotation.AnnotationText="Extraction Validation &amp; Extractor training" DisplayName="Validate &amp; Train Extractors" sap:VirtualizedContainerService.HintSize="540,2545" sap2010:WorkflowViewState.IdRef="Sequence_77">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="p1:ExtractionResult" sap2010:Annotation.AnnotationText="Human validated extraction results used for training." Name="validatedExtractionResults" />
                                           <Variable x:TypeArguments="p3:DocumentValidationActionData" sap2010:Annotation.AnnotationText="Orchestrator Validation Action that needs to be human-handled in order to continue the process." Name="validationAction" />
@@ -367,7 +367,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:LogMessage DisplayName="Log Message -  Create HitL Validation Action" sap:VirtualizedContainerService.HintSize="478,92" sap2010:WorkflowViewState.IdRef="LogMessage_97" Message="[config(&quot;LogMessage_CreateValidationAction&quot;) + &quot; &quot; + extractionResults.ResultsDocument.DocumentTypeId + &quot; (pag &quot; +  currentPageRange +&quot;)&quot; + Environment.NewLine + config(&quot;logKey&quot;)]" />
-                                        <p3:CreateDocumentValidationAction TimeoutMs="{x:Null}" ActionCatalog="[config(&quot;ActionCatalog&quot;)]" ActionOutput="[validationAction]" ActionPriority="Medium" ActionTitle="[config(&quot;ValidationActionTitle&quot;) + &quot; &quot; + extractionResults.ResultsDocument.DocumentTypeName]" AutomaticExtractionResults="[extractionResults]" BucketFolderPath="[config(&quot;StorageBucketDirectoryPath&quot;)]" BucketName="[config(&quot;StorageBucketName&quot;)]" DisplayName="Create Document Data Validation Action" DocumentObjectModel="[dom]" DocumentPath="[in_TargetFile]" DocumentText="[docText]" FolderPath="[config(&quot;ActionFolderPath&quot;)]" sap:VirtualizedContainerService.HintSize="478,366" sap2010:WorkflowViewState.IdRef="CreateDocumentValidationAction_20" ShowOnlyRelevantPageRange="True" Taxonomy="[docTaxonomy]">
+                                        <p3:CreateDocumentValidationAction TimeoutMs="{x:Null}" ActionCatalog="[config(&quot;ActionCatalog&quot;)]" ActionOutput="[validationAction]" ActionPriority="Medium" ActionTitle="[config(&quot;ValidationActionTitle&quot;) + &quot; &quot; + extractionResults.ResultsDocument.DocumentTypeName+&quot; &quot;+path.GetFileNameWithoutExtension(in_TargetFile)]" AutomaticExtractionResults="[extractionResults]" BucketFolderPath="[config(&quot;StorageBucketDirectoryPath&quot;)]" BucketName="[config(&quot;StorageBucketName&quot;)]" DisplayName="Create Document Data Validation Action" DocumentObjectModel="[dom]" DocumentPath="[in_TargetFile]" DocumentText="[docText]" FolderPath="[config(&quot;ActionFolderPath&quot;)]" sap:VirtualizedContainerService.HintSize="478,366" sap2010:WorkflowViewState.IdRef="CreateDocumentValidationAction_20" ShowOnlyRelevantPageRange="True" Taxonomy="[docTaxonomy]">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -375,10 +375,10 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </p3:CreateDocumentValidationAction>
-                                        <If Condition="[CBool(config(&quot;SendBusinessMail&quot;))]" DisplayName="If - Send Email" sap:VirtualizedContainerService.HintSize="478,503" sap2010:WorkflowViewState.IdRef="If_13">
+                                        <If Condition="[CBool(config(&quot;SendBusinessMail&quot;))]" DisplayName="If - Send Email" sap:VirtualizedContainerService.HintSize="478,52" sap2010:WorkflowViewState.IdRef="If_13">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
@@ -619,11 +619,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">330,233.50000000000003</av:Point>
-                          <av:Size x:Key="ShapeSize">200,52</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">430,285.5 430,336.5 179.5,336.5 179.5,366.5</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">216,52</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">438,285.5 438,336.5 179.5,336.5 179.5,366.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get the TransactionItem" DisplayName="GetTransactionItem" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_131" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\15_GetTransactionItem.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Get the TransactionItem" DisplayName="GetTransactionItem" sap:VirtualizedContainerService.HintSize="216,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_131" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\15_GetTransactionItem.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config">[config]</InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_MaxAttempts">[maxAttempts]</InArgument>
