@@ -1,5 +1,5 @@
 {
-  "name": "NaviaClaimsDocumentUndertanding",
+  "name": "DocumentUnderstandingProcess2",
   "description": "New Document Understanding Process",
   "main": "Main-ActionCenter.xaml",
   "dependencies": {
@@ -16,7 +16,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.5.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -44,122 +44,7 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "91d26a0a-93ac-4a5d-acca-d7c4f929b7d8",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\15_GetTransaction\\NoQueueItem.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "6772fcde-e460-400b-9f96-b40397bf311c",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\15_GetTransaction\\NoSpecificContent.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "36a3582b-8a69-4aaa-8470-ee1b2428c987",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\20_Digitization\\Digitize.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "4481151f-c397-4298-a390-b08f737f3017",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\30_Classification\\Classify.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "46d32b04-ec27-4b6c-b031-2cf4493d3059",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\50_Extraction\\Extraction.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "328a68d3-285e-4835-8f0b-dc915cb0ccb4",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Invoice_Date.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "8148c6b5-bc74-4df8-bd4e-7069d304d044",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Invoice_MandatoryFields.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "04ba4e9c-1ab5-4b71-bca8-f574f7284c69",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Invoice_OtherFieldsConfidence.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "df433f5a-dd07-4b5d-9e59-5636ef73b3f2",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Invoice_SpecificFieldConfidence.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "c940462f-39ae-400a-bf95-5f20a30d9825",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Invoice_Subtotal.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "559384ee-d8a5-462d-914e-eb8435df0939",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Invoice_Total.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "0e4c9ca3-b7b6-46d0-b114-4ecfca35232b",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Receipt_Date.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "2ac9fed7-9333-41ba-82d9-67c8a4d3579c",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Receipt_MandatoryFields.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "51aaa5f3-04ac-43d3-8bfe-9d5b5c9f2b55",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Receipt_OtherFieldsConfidence.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "539f7b1a-5a86-4532-8323-1e7ba62b7f53",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Receipt_SpecificFieldConfidence.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "34db7756-8ba6-436c-870e-aa152f26c42a",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\55_ExtractionValidation\\Receipt_Total.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "4db13ad1-1479-4eda-8461-46fcfbf611a1",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\70_Export\\Export.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "3c6d4296-b156-4600-9676-b2fc9c38979c",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\15_GetTransaction\\QueueItemSpecificContent.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "9219bcb8-9f37-446e-851c-0df304f899b6",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\35_ClassificationValidation\\ClassificationBRConfidence.xaml"
-      }
-    ],
+    "fileInfoCollection": [],
     "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
