@@ -1,12 +1,13 @@
-﻿<Activity mc:Ignorable="sap sap2010" x:Class="PDFSplit" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PDFSplit" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_TargetFile" Type="InOutArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="out_FilePathInprogressFolder" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>726,1885</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1881</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PDFSplit_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -82,15 +83,15 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="736,1820" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap:VirtualizedContainerService.HintSize="640,1816" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="674,1709" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="578,1705" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="PDFSplit" sap:VirtualizedContainerService.HintSize="636,1459" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="PDFSplit" sap:VirtualizedContainerService.HintSize="540,1455" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="PDFPageRange" />
             <Variable x:TypeArguments="x:Int32" Name="IntPDFPageCount" />
@@ -103,7 +104,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="in_TargetFile - Assign" sap:VirtualizedContainerService.HintSize="574,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign DisplayName="in_TargetFile - Assign" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[in_TargetFile]</OutArgument>
             </Assign.To>
@@ -111,7 +112,7 @@
               <InArgument x:TypeArguments="x:String">[in_TargetFile]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="oldFilePath File Path - Assign" sap:VirtualizedContainerService.HintSize="574,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign DisplayName="oldFilePath File Path - Assign" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[oldFilePath]</OutArgument>
             </Assign.To>
@@ -119,7 +120,7 @@
               <InArgument x:TypeArguments="x:String">[in_TargetFile]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="FileMovePath - Assign" sap:VirtualizedContainerService.HintSize="574,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign DisplayName="FileMovePath - Assign" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[FileMovePath]</OutArgument>
             </Assign.To>
@@ -127,7 +128,15 @@
               <InArgument x:TypeArguments="x:String">[in_Config("InputFileLocation").Replace("Date",now.ToString("MMddyyyy"))+"\"+in_Config("DU_InProgressFolder")]</InArgument>
             </Assign.Value>
           </Assign>
-          <upap:GetPDFPageCount DisplayName="Get PDF Page Count" FileName="[in_TargetFile]" sap:VirtualizedContainerService.HintSize="574,60" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[IntPDFPageCount]">
+          <Assign DisplayName="FileMovePath - Assign" sap:VirtualizedContainerService.HintSize="478,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_FilePathInprogressFolder]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[FileMovePath]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <upap:GetPDFPageCount DisplayName="Get PDF Page Count" FileName="[in_TargetFile]" sap:VirtualizedContainerService.HintSize="478,60" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" PageCount="[IntPDFPageCount]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -135,7 +144,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </upap:GetPDFPageCount>
-          <If Condition="[IntPDFPageCount=2]" DisplayName="Check for Page Count - If" sap:VirtualizedContainerService.HintSize="574,882" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[IntPDFPageCount=2]" DisplayName="Check for Page Count - If" sap:VirtualizedContainerService.HintSize="478,840" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,14 +152,14 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="496,606" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence sap:VirtualizedContainerService.HintSize="400,564" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[PDFPageRange]</OutArgument>
                   </Assign.To>
@@ -158,7 +167,7 @@
                     <InArgument x:TypeArguments="x:String">["2-"+IntPDFPageCount.ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <upap:ExtractPDFPageRange DisplayName="Extract PDF Page Range" FileName="[in_TargetFile]" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="ExtractPDFPageRange_1" OutputFileName="[IO.Directory.GetCurrentDirectory+&quot;\&quot;+in_Config(&quot;MoveFileLocation&quot;)+&quot;\&quot;+path.GetFileName(in_TargetFile)]" Range="[PDFPageRange]">
+                <upap:ExtractPDFPageRange DisplayName="Extract PDF Page Range" FileName="[in_TargetFile]" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="ExtractPDFPageRange_1" OutputFileName="[IO.Directory.GetCurrentDirectory+&quot;\&quot;+in_Config(&quot;MoveFileLocation&quot;)+&quot;\&quot;+path.GetFileName(in_TargetFile)]" Range="[PDFPageRange]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -166,7 +175,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </upap:ExtractPDFPageRange>
-                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[in_TargetFile]</OutArgument>
                   </Assign.To>
@@ -174,7 +183,7 @@
                     <InArgument x:TypeArguments="x:String">[IO.Directory.GetCurrentDirectory+"\"+in_Config("MoveFileLocation")+"\"+path.GetFileName(in_TargetFile)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[FileMovePath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[oldFilePath]" />
+                <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[FileMovePath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="338,159" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[oldFilePath]" />
               </Sequence>
             </If.Then>
             <If.Else>
@@ -193,7 +202,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="640,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="544,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -207,7 +216,7 @@
             <Rethrow sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="640,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="544,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
